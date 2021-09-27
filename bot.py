@@ -13,8 +13,8 @@ def welcome(message):
  
     # keyboard
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    item1 = types.KeyboardButton("🎲 Рандомное число")
-    item2 = types.KeyboardButton("😊 Как дела?")
+    item1 = types.KeyboardButton("Рандомное число")
+    item2 = types.KeyboardButton("Как дела?")
  
     markup.add(item1, item2)
  
@@ -24,9 +24,9 @@ def welcome(message):
 @bot.message_handler(content_types=['text'])
 def lalala(message):
     if message.chat.type == 'private':
-        if message.text == '🎲 Рандомное число':
+        if message.text == 'Рандомное число':
             bot.send_message(message.chat.id, str(random.randint(0,100)))
-        elif message.text == '😊 Как дела?':
+        elif message.text == 'Как дела?':
  
             markup = types.InlineKeyboardMarkup(row_width=2)
             item1 = types.InlineKeyboardButton("Хорошо", callback_data='good')
